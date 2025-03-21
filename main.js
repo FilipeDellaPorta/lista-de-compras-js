@@ -20,6 +20,7 @@ function salvarItem() {
     alert('Item já existe!');
   } else {
     listaDeItens.push({ valor: comprasItem });
+    itensInput.value = '';
   }
 
   console.log(listaDeItens);
@@ -39,5 +40,15 @@ function mostrarItem() {
         </div>
     </li>
     `;
+  });
+
+  const inputsCheck = document.querySelectorAll('input[type="checkbox"]');
+
+  inputsCheck.forEach((i) => {
+    i.addEventListener('click', (evento) => {
+      console.log(
+        evento.target.parentElement.parentElement.getAttribute('data-value')
+      );
+    });
   });
 }
