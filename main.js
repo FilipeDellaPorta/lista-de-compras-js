@@ -53,12 +53,12 @@ function mostrarItem() {
                 type="text" 
                 class="is-size-5" 
                 value="${elemento.valor}" 
-                ${index != itemAEditar ? 'disabled' : ''}>
+                ${index !== Number(itemAEditar) ? 'disabled' : ''}>
                 </input>
             </div>
             <div>
                ${
-                 index == itemAEditar
+                 index === Number(itemAEditar)
                    ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i><button>'
                    : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'
                }
